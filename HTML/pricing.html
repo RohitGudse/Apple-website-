@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Apple — Pricing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        /* Reset & Fonts */
+        :root {
+            --bg: #0f0f12;
+            --panel: #131217;
+            --muted: #bdb6b0;
+            --accent: #d6b36a;
+            /* gold */
+            --glass: rgba(255, 255, 255, 0.04);
+            --radius: 16px;
+            --container: 1100px;
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            background: linear-gradient(180deg, var(--bg) 0%, #000000 100%);
+            color: #000000;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            line-height: 1.5;
+            font-size: 16px;
+        }
+
+        /* Container */
+        .container {
+            max-width: var(--container);
+            margin: 0 auto;
+            padding: 28px;
+        }
+
+        /* NAV */
+        .nav-wrap {
+            background: transparent;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            padding: 12px 0
+        }
+
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            justify-content: space-between
+        }
+
+        .brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .nav {
+            display: flex;
+            gap: 18px;
+            align-items: center
+        }
+
+        .nav-link {
+            color: var(--muted);
+            text-decoration: none;
+            padding: 8px 12px;
+            border-radius: 10px;
+            transition: all .18s
+        }
+
+        .nav-link:hover {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.03)
+        }
+
+        .nav-link.active {
+            color: #fff;
+            box-shadow: 0 8px 30px rgba(214, 179, 106, 0.08) inset
+        }
+
+        /* Hero */
+        .hero {
+            background: url(../image/What’s\ New\ -\ visionOS\ -\ Apple\ Developer.jpeg) no-repeat center/cover;
+            height: 60vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #ffffff;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            font-weight: 800;
+        }
+
+        .hero-content p {
+            margin-top: 10px;
+            font-size: 1.2rem;
+        }
+
+        /* Section Titles */
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            text-align: center;
+            color: #ffffff;
+        }
+
+        .muted {
+            text-align: center;
+            color: #ffffff;
+            margin-bottom: 30px;
+        }
+
+        /* Pricing Cards */
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .pricing-card {
+            background: #ffffff;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform .3s ease;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .pricing-card .product-img {
+            max-width: 180px;
+            margin: auto;
+            display: block;
+        }
+
+        .price-row {
+            font-size: 1.5rem;
+            margin: 15px 0;
+        }
+
+        .price {
+            font-weight: 700;
+        }
+
+        .plan-features {
+            list-style: none;
+            margin-top: 10px;
+        }
+
+        .plan-features li {
+            margin: 5px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            border-radius: 8px;
+            transition: background .3s;
+        }
+
+        .btn-outline {
+            border: 2px solid #000;
+            color: #000;
+        }
+
+        .btn-outline:hover {
+            background: #000;
+            color: #4d4848;
+        }
+
+        .btn-primary {
+            background: #000;
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            opacity: 0.9;
+        }
+
+        .popular {
+            border: 2px solid #000;
+        }
+
+        .popular-badge {
+            background: #000;
+            color: #fff;
+            padding: 5px 12px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        /* Upcoming Section */
+        .upcoming-section {
+            margin: 80px 0;
+        }
+
+        .upcoming-grid {
+            display: grid;
+            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        }
+
+        .upcoming-card {
+            background: #fff;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .upcoming-img {
+            max-width: 200px;
+            margin-bottom: 15px;
+        }
+
+        /* footer */
+        /* Footer */
+        .footer {
+            background: #000000;
+            color: #bbb;
+            padding: 50px 20px 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+            border-bottom: 1px solid #333;
+            padding-bottom: 30px;
+        }
+
+        .footer-col {
+            flex: 1 1 180px;
+            margin: 10px;
+        }
+
+        .footer-col h2.logo {
+            color: #ffffff;
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+        .footer-col p.slogan {
+            font-size: 12px;
+            color: #eee9e9;
+        }
+
+        .footer-col ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-col ul li {
+            margin: 8px 0;
+        }
+
+        .footer-col ul li a {
+            color: #bbb;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-col ul li a:hover {
+            color: #fff;
+        }
+
+        /* Social Icons */
+        .footer-social {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .footer-social a {
+            color: #bbb;
+            margin: 0 10px;
+            font-size: 18px;
+            display: inline-block;
+            transition: color 0.3s;
+        }
+
+        .footer-social a:hover {
+            color: #fff;
+        }
+
+        /* Bottom */
+        .footer-bottom {
+            text-align: center;
+            font-size: 13px;
+            color: #777;
+            padding-top: 10px;
+        }
+
+        /* ===================================== */
+    </style>
+</head>
+
+<body>
+
+    <header class="nav-wrap">
+        <div class="container nav-inner">
+            <a class="brand" href="index.html"> Apple</a>
+            <nav class="nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="gallery.html" class="nav-link">Gallery</a>
+                <a href="pricing.html" class="nav-link">Pricing</a>
+                <a href="../html/accessoris.html" class="nav-link">Accessorise</a>
+                <a href="contact.html" class="nav-link active">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Discover the Future of iPhone</h1>
+            <p>Premium design. Next-level performance. Unmatched experience.</p>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <main class="container">
+        <section class="pricing-section">
+            <h1 class="section-title">Choose Your iPhone</h1>
+            <p class="muted">Select a model that fits your lifestyle.</p>
+
+            <div class="pricing-cards">
+                <!-- iPhone 15 -->
+                <article class="pricing-card">
+                    <img src="../image/iPhone 15.jpeg" alt="iPhone 15" class="product-img">
+                    <h3>iPhone 15</h3>
+                    <p class="small">Compact & capable</p>
+                    <div class="price-row"><span class="price">₹69900.00</span><small> /-from</small></div>
+                    <ul class="plan-features">
+                        <li>A17-like performance</li>
+                        <li>Dual-camera system</li>
+                        <li>All-day battery life</li>
+                    </ul>
+                    <a class="btn btn-outline" href="#">Buy</a>
+                </article>
+
+                <!-- iPhone 15 Pro -->
+                <article class="pricing-card popular">
+                    <div class="popular-badge">Most Popular</div>
+                    <img src="../image/APPLE - iPhone 15 Pro Max 512GB _ Selfridges_com.jpeg" alt="iPhone 15 Pro"
+                        class="product-img">
+                    <h3>iPhone 15 Pro</h3>
+                    <p class="small">Pro level performance</p>
+                    <div class="price-row"><span class="price">₹109900.00</span><small> /-from</small></div>
+                    <ul class="plan-features">
+                        <li>Pro camera system</li>
+                        <li>Titanium design</li>
+                        <li>Cinematic video</li>
+                    </ul>
+                    <a class="btn btn-primary" href="#">Buy Pro</a>
+                </article>
+
+                <!-- iPhone 15 Pro Max -->
+                <article class="pricing-card">
+                    <img src="../image/Apple iPhone 15 Pro.jpeg" alt="iPhone 15 Pro Max" class="product-img">
+                    <h3>iPhone 15 Pro Max</h3>
+                    <p class="small">Ultimate battery & display</p>
+                    <div class="price-row"><span class="price">₹114900.00</span><small> /-from</small></div>
+                    <ul class="plan-features">
+                        <li>Largest display</li>
+                        <li>Best battery life</li>
+                        <li>Advanced zoom camera</li>
+                    </ul>
+                    <a class="btn btn-outline" href="#">Buy Max</a>
+                </article>
+            </div>
+        </section>
+        <br>
+
+
+        <!-- ==================new section======================================= -->
+
+        <section class="pricing-section">
+            <!-- <h1 class="section-title">Choose Your iPhone</h1>
+            <p class="muted">Select a model that fits your lifestyle.</p> -->
+
+            <div class="pricing-cards">
+                <!-- iPhone 15 -->
+                <article class="pricing-card">
+                    <img src="../image/Iphone 16.jpeg" alt="iPhone 15" class="product-img">
+                    <h3>iPhone 16</h3>
+                    <p class="small">Compact & even more capable</p>
+                    <div class="price-row"><span class="price">₹79990.00</span><small> /-from</small></div>
+                    <ul class="plan-features">
+                        <li>A18-level performance</li>
+                        <li>Dual-camera system (48 MP + ultra-wide)</li>
+                        <li>All-day battery (up to 22 h video playback)</li>
+                    </ul>
+                    <a class="btn btn-outline" href="#">Buy</a>
+                </article>
+
+                <!-- iPhone 15 Pro -->
+                <article class="pricing-card popular">
+                    <div class="popular-badge">Most Popular</div>
+                    <img src="../image/The iPhone 16 Pro is expected to feature the same design with small enhancements such as a larger display, thinner bezels, and a new Capture button! How do you feel about the design_.jpeg"
+                        alt="iPhone 15 Pro" class="product-img">
+                    <h3>iPhone 16 Pro</h3>
+                    <p class="small">Pro level performance</p>
+                    <div class="price-row"><span class="price">₹109900.00</span><small> /-from</small></div>
+                    <ul class="plan-features">
+                        <li>Pro camera system</li>
+                        <li>Titanium design</li>
+                        <li>Cinematic video</li>
+                    </ul>
+                    <a class="btn btn-primary" href="#">Buy Pro</a>
+                </article>
+
+                <!-- iPhone 15 Pro Max -->
+                <article class="pricing-card">
+                    <img src="../image/Apple iPhone 16 Pro Max – Price, Specs, Colors, Size & Reviews _ AT&T.jpeg"
+                        alt="iPhone 15 Pro Max" class="product-img">
+                    <h3>iPhone 16 Pro Max</h3>
+                    <p class="small">Ultimate battery & display</p>
+                    <div class="price-row"><span class="price">₹114900.00</span><small> /-from</small></div>
+                    <ul class="plan-features">
+                        <li>Largest display</li>
+                        <li>Best battery life</li>
+                        <li>Advanced zoom camera</li>
+                    </ul>
+                    <a class="btn btn-outline" href="#">Buy Max</a>
+                </article>
+            </div>
+        </section>
+
+
+
+
+        <!-- Upcoming Products -->
+        <section class="upcoming-section">
+            <h1 class="section-title">Upcoming Apple Products</h1>
+
+            <p class="muted">Stay tuned for the future innovations.</p>
+            <div class="upcoming-grid">
+                <div class="upcoming-card">
+                    <img src="../image/Apple Vision Pro — 3D Launch Film & Brand Design.jpeg" alt="Apple Vision"
+                        class="upcoming-img">
+                    <h3>Apple Vision Pro</h3>
+                    <p>Mixed Reality headset. Available in early 2026.</p>
+                </div>
+                <div class="upcoming-card">
+                    <img src="../image/Apple Watch Series 10 is smaller, thinner, lighter, and has mini-Intelligence.jpeg"
+                        alt="Apple Watch 10" class="upcoming-img">
+                    <h3>Apple Watch Series 10</h3>
+                    <p>Reimagined health and fitness tracking.</p>
+                </div>
+                <div class="upcoming-card">
+                    <img src="../image/apple laptop.jpeg" alt="MacBook M4" class="upcoming-img">
+                    <h3>MacBook M4</h3>
+                    <p>Next-gen M4 processor with ultrathin design.</p>
+                </div>
+                <div class="upcoming-card">
+                    <img src="../image/Apple AirPods Pro 2.jpeg" alt="MacBook M4" class="upcoming-img">
+                    <h3>MacBook M4</h3>
+                    <p>Next-gen M4 processor with ultrathin design.</p>
+                </div>
+                <div class="upcoming-card">
+                    <img src="../image/Ipad.jpeg" alt="MacBook M4" class="upcoming-img">
+                    <h3>MacBook M4</h3>
+                    <p>Next-gen M4 processor with ultrathin design.</p>
+                </div>
+                <div class="upcoming-card">
+                    <img src="../image/Apple headphone.jpeg" alt="MacBook M4" class="upcoming-img">
+                    <h3>MacBook M4</h3>
+                    <p>Next-gen M4 processor with ultrathin design.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================new section======================================= -->
+
+    </main>
+
+    <!-- ================footer======================= -->
+    <footer class="footer">
+        <div class="footer-container">
+
+            <!-- Logo and slogan -->
+            <div class="footer-col">
+                <h2 class="logo">LOGO</h2>
+                <p class="slogan">SLOGAN COMPANY</p>
+            </div>
+
+            <!-- Links column 1 -->
+            <div class="footer-col">
+                <ul>
+                    <li><a href="#">Weebly Themes</a></li>
+                    <li><a href="#">Pre-sale FAQs</a></li>
+                    <li><a href="#">Submit a Ticket</a></li>
+                </ul>
+            </div>
+
+            <!-- Links column 2 -->
+            <div class="footer-col">
+                <ul>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Theme Tweak</a></li>
+                </ul>
+            </div>
+
+            <!-- Links column 3 -->
+            <div class="footer-col">
+                <ul>
+                    <li><a href="#">Showcase</a></li>
+                    <li><a href="#">Widgetkit</a></li>
+                    <li><a href="#">Support</a></li>
+                </ul>
+            </div>
+
+            <!-- Links column 4 -->
+            <div class="footer-col">
+                <ul>
+                    <li><a href="../html/gallery.html">Gallery</a></li>
+                    <li><a href="../html/contact.html">Contact Us</a></li>
+                    <li><a href="../html/pricing.html">Pricing</a></li>
+                    <li><a href="#">Resources</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Social Icons -->
+        <div class="footer-social">
+            <a href="../image/APPLE - iPhone 15 Pro Max 512GB _ Selfridges_com.jpeg"><i
+                    class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-rss"></i></a>
+            <a href="#"><i class="fab fa-google-plus-g"></i></a>
+            <a href="#"><i class="fab fa-flickr"></i></a>
+        </div>
+
+        <!-- Copyright -->
+        <div class="footer-bottom">
+            <p>© 2025 Apple Inc. All rights reserved.</p>
+            <br>
+            <p>Created by Rohit Gudse</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

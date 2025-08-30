@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Apple — Gallery</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../css/css/style.css">
+  <script src="../html/script.js"></script>
+</head> 
+
+<body>
+  <header class="nav-wrap">
+    <div class="container nav-inner">
+      <a class="brand" href="../html/index.html"> Apple</a>
+      <nav class="nav">
+        <a href="../html/index.html" class="nav-link">Home</a>
+        <a href="../html/gallery.html" class="nav-link active">Gallery</a>
+        <a href="../html/pricing.html" class="nav-link">Pricing</a>
+        <a href="../html/accessoris.html" class="nav-link">Accessorise</a>
+        <a href="../html/contact.html" class="nav-link">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section-gallery">
+      <h1 class="section-title">Product Gallery</h1>
+      <p class="muted">Click any image to open it in the lightbox.</p>
+
+      <div class="gallery-grid-full">
+        <!-- Replace these with your own images -->
+        <img src="../image/g1.jpeg" alt="g1" class="gallery-thumb" onclick="openModal(this)">
+        <img src="../image/g2.jpeg" alt="g2" class="gallery-thumb" onclick="openModal(this)">
+        <img src="../image/g3.jpeg" alt="g3" class="gallery-thumb" onclick="openModal(this)">
+        <img src="../image/g6.jpeg" alt="g4" class="gallery-thumb" onclick="openModal(this)">
+        <img src="../image/New iphone.jpeg" alt="g5" class="gallery-thumb" onclick="openModal(this)">
+        <img src="../image/g5.jpeg" alt="g6" class="gallery-thumb" onclick="openModal(this)">
+
+        <img src="../image/g7.jpeg" alt="g1" class="gallery-thumb" onclick="openModal(this)">
+        <img src="../image/g8.jpeg" alt="g2" class="gallery-thumb" onclick="openModal(this)">
+        <img src="../image/g9.jpeg" alt="g3" class="gallery-thumb" onclick="openModal(this)">
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal / Lightbox -->
+  <div id="lightbox" class="lightbox" onclick="closeModal(event)">
+    <button class="lightbox-close" onclick="closeModal(event)" aria-label="close">✕</button>
+    <img id="lightbox-img" src="" alt="enlarged">
+    <div id="lightbox-caption" class="lightbox-caption"></div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-container">
+
+      <!-- Logo and slogan -->
+      <div class="footer-col">
+        <h2 class="logo">LOGO</h2>
+        <p class="slogan">SLOGAN COMPANY</p>
+      </div>
+
+      <!-- Links column 1 -->
+      <div class="footer-col">
+        <ul>
+          <li><a href="#">Weebly Themes</a></li>
+          <li><a href="#">Pre-sale FAQs</a></li>
+          <li><a href="#">Submit a Ticket</a></li>
+        </ul>
+      </div>
+
+      <!-- Links column 2 -->
+      <div class="footer-col">
+        <ul>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Theme Tweak</a></li>
+        </ul>
+      </div>
+
+      <!-- Links column 3 -->
+      <div class="footer-col">
+        <ul>
+          <li><a href="#">Showcase</a></li>
+          <li><a href="#">Widgetkit</a></li>
+          <li><a href="#">Support</a></li>
+        </ul>
+      </div>
+
+      <!-- Links column 4 -->
+      <div class="footer-col">
+        <ul>
+          <li><a href="../html/gallery.html">Gallery</a></li>
+          <li><a href=".//contact.html">Contact Us</a></li>
+          <li><a href=".//pricing.html">Pricing</a></li>
+          <li><a href="#">Resources</a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- Social Icons -->
+    <div class="footer-social">
+      <a href="../image/APPLE - iPhone 15 Pro Max 512GB _ Selfridges_com.jpeg"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-rss"></i></a>
+      <a href="#"><i class="fab fa-google-plus-g"></i></a>
+      <a href="#"><i class="fab fa-flickr"></i></a>
+    </div>
+
+    <!-- Copyright -->
+    <div class="footer-bottom">
+      <p>© 2025 Apple Inc. All rights reserved.</p>
+      <br>
+      <p>Created by Rohit Gudse</p>
+    </div>
+  </footer>
+
+  <!-- <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© 2025 Apple Inc.</div>
+      <div>Created by Rohit Gudse</div>
+    </div>
+  </footer> -->
+
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Apple — iPhone Demo (Home)</title>
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;600&display=swap"
+    rel="stylesheet">
+
+  <!-- Local CSS (inside the same published folder) -->
+  <link rel="stylesheet" href="../css/css/style.css" />
+
+  <style>
+    body {
+      background-color: #000;
+      color: #ffffff;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 40px;
+    }
+
+    .section-heading {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
+
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      justify-items: center;
+      gap: 25px;
+    }
+
+    .tech-card {
+      background: #000000;
+      padding: 10px;
+      border-radius: 12px;
+      width: 340px;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      cursor: pointer;
+      text-align: left;
+    }
+
+    .tech-card:hover {
+      transform: scale(1.07);
+      box-shadow: 0 10px 25px rgba(235, 232, 232, 0.15)
+    }
+
+    .card-figure {
+      background: #000000;
+      border-radius: 10px;
+      height: 140px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 12px;
+    }
+
+    .card-figure img {
+      max-width: 100%;
+      max-height: 100%;
+      border-radius: 10px;
+    }
+
+    .card-title {
+      font-size: 1rem;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .card-meta {
+      font-size: 0.8rem;
+      color: #aaa;
+      margin-bottom: 5px;
+    }
+
+    .card-links a {
+      display: inline-block;
+      margin-right: 8px;
+      font-size: 0.85rem;
+      text-decoration: none;
+      color: #4aa3ff;
+      transition: color 0.3s;
+    }
+
+    .card-links a:hover {
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="nav-wrap">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html"> Apple</a>
+      <nav class="nav">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="gallery.html" class="nav-link">Gallery</a>
+        <a href="pricing.html" class="nav-link">Pricing</a>
+        <a href="accessoris.html" class="nav-link">Accessorise</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+      <button class="hamburger" aria-label="menu" onclick="toggleMobileNav()">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero container" id="hero">
+      <div class="hero-left">
+        <h1 class="hero-title">iPhone 15 Pro</h1>
+        <p class="hero-sub">Power. Elegance. Titanium craftsmanship — reimagined for modern luxury.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="pricing.html">Buy Now</a>
+          <a class="btn btn-outline" href="gallery.html">Explore Gallery</a>
+        </div>
+        <ul class="hero-features">
+          <li>⚡ A17 Bionic — peak performance</li>
+          <li>📷 Pro camera system — cinematic photography</li>
+          <li>🔋 All-day battery & intelligent power</li>
+        </ul>
+      </div>
+      <div class="hero-right">
+        <div class="device-wrap">
+          <!-- NOTE: rename the file "iphone ve.jpeg" -> "iphone-ve.jpeg" and place it in HTML/image/ -->
+          <img src="/image/iphone ve.jpeg" alt="iPhone" class="device-img">
+          <div class="gloss-overlay"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="features container" id="features">
+      <h2 class="section-title">Why iPhone?</h2>
+      <div class="feature-grid">
+        <article class="feature-card">
+          <h3>Performance</h3>
+          <p>Industry-leading compute with efficient power management — built for creators and pros.</p>
+        </article>
+        <article class="feature-card">
+          <h3>Design</h3>
+          <p>Exquisite titanium frame and refined finishes — a tactile experience that feels premium.</p>
+        </article>
+        <article class="feature-card">
+          <h3>Camera</h3>
+          <p>Large sensors, computational photography and 4K HDR for pro-grade results.</p>
+        </article>
+        <article class="feature-card">
+          <h3>Security</h3>
+          <p>Best-in-class privacy features and secure enclave for your data.</p>
+        </article>
+      </div>
+    </section>
+
+    <h1 class="section-heading">Technologies</h1>
+
+    <section class="tech-grid">
+      <article class="tech-card">
+        <figure class="card-figure">
+          <!-- rename this file to: game-center-icon-and-glyphs.png -->
+          <img src="/image/Game Center Icon and Glyphs.png" alt="Add Apple Watch Face">
+        </figure>
+        <h2 class="card-title">Game Center Icon and Glyphs</h2>
+        <p class="card-links"><a href="#">PNG</a>, <a href="#">PDF</a>, <a href="#">SVG</a></p>
+        <p class="card-meta">January 3, 2025 • 3.98 MB</p>
+      </article>
+
+      <aside class="tech-card">
+        <figure class="card-figure">
+          <!-- rename: gamer-and-tool.png -->
+          <img src="/image/gamer and tool.png" alt="AirPlay">
+        </figure>
+        <h2 class="card-title">Games and Game Center</h2>
+        <p class="card-links"><a href="#">PDF</a></p>
+        <p class="card-meta">January 7, 2025 • 6.56 MB</p>
+        <p class="card-links"><a href="#">Design Guidelines</a></p>
+      </aside>
+
+      <section class="tech-card">
+        <figure class="card-figure">
+          <img src="/image/p1.png" alt="App Clips">
+        </figure>
+        <h2 class="card-title">Siri Icons</h2>
+        <p class="card-links"><a href="#">Figma</a></p>
+        <p class="card-meta">October 9, 2024</p>
+        <p class="card-links"><a href="#">Sketch</a></p>
+        <p class="card-meta">January 21, 2025 • 1.06 MB</p>
+      </section>
+
+      <article class="tech-card">
+        <figure class="card-figure">
+          <!-- rename this file to: game-center-icon-and-glyphs.png -->
+          <img src="/image/p2.png" alt="Add Apple Watch Face">
+        </figure>
+        <h2 class="card-title">Game Center Icon and Glyphs</h2>
+        <p class="card-links"><a href="#">PNG</a>, <a href="#">PDF</a>, <a href="#">SVG</a></p>
+        <p class="card-meta">January 3, 2025 • 3.98 MB</p>
+      </article>
+
+      <aside class="tech-card">
+        <figure class="card-figure">
+          <!-- rename: gamer-and-tool.png -->
+          <img src="/image/p3.png" alt="AirPlay">
+        </figure>
+        <h2 class="card-title">Games and Game Center</h2>
+        <p class="card-links"><a href="#">PDF</a></p>
+        <p class="card-meta">January 7, 2025 • 6.56 MB</p>
+        <p class="card-links"><a href="#">Design Guidelines</a></p>
+      </aside>
+
+      <section class="tech-card">
+        <figure class="card-figure">
+          <img src="/image/p4.png" alt="App Clips">
+        </figure>
+        <h2 class="card-title">Siri Icons</h2>
+        <p class="card-links"><a href="#">Figma</a></p>
+        <p class="card-meta">October 9, 2024</p>
+        <p class="card-links"><a href="#">Sketch</a></p>
+        <p class="card-meta">January 21, 2025 • 1.06 MB</p>
+      </section>
+
+
+      <!-- other cards continue similarly... -->
+    </section>
+
+    <!-- PROMO -->
+    <section class="promo">
+      <div class="container promo-inner">
+        <div>
+          <h2>Trade-in for Luxury</h2>
+          <p>Upgrade today — get instant trade-in value and exclusive offers on select finishes.</p>
+        </div>
+        <a class="btn btn-secondary" href="pricing.html">Check Offers</a>
+      </div>
+    </section>
+
+    <!-- GALLERY PREVIEW -->
+    <section class="container gallery-preview">
+      <h2 class="section-title">Gallery</h2>
+      <div class="preview-grid">
+        <a href="gallery.html"><img src="/image/gallery1.jpeg" alt="gallery "></a>
+        <a href="gallery.html"><img src="/image/gra2.jpeg" alt="gallery "></a>
+        <a href="gallery.html"><img src="/image/gra3.jpeg" alt="gallery "></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h2 class="logo">LOGO</h2>
+        <p class="slogan">SLOGAN COMPANY</p>
+      </div>
+      <div class="footer-col">
+        <ul>
+          <li><a href="#">Weebly Themes</a></li>
+          <li><a href="#">Pre-sale FAQs</a></li>
+          <li><a href="#">Submit a Ticket</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <ul>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Theme Tweak</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <ul>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="#">Resources</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-social">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-rss"></i></a>
+      <a href="#"><i class="fab fa-google-plus-g"></i></a>
+      <a href="#"><i class="fab fa-flickr"></i></a>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 Apple Inc. All rights reserved.</p>
+      <p>Created by Rohit Gudse</p>
+    </div>
+  </footer>
+
+  <!-- Local JS (inside the same published folder) -->
+  <script src="JS/script.js"></script>
+</body>
+
+</html>
